@@ -12,7 +12,16 @@ type BtnProps = {
 const base =
   "inline-flex items-center justify-center rounded-full border border-hair px-[18px] py-3 text-[10.5px] font-semibold tracking-[0.14em] uppercase transition-colors hover:border-amber hover:text-amber";
 const solidCls =
-  "border-ink bg-ink text-ground hover:border-amber hover:bg-amber hover:text-ground";
+  "border-[#EDE7DC] bg-[#EDE7DC] !text-[#0A0C0E] hover:border-amber hover:bg-amber hover:!text-[#0A0C0E]";
+
+function isPlainAnchor(href: string) {
+  return (
+    href.startsWith("http") ||
+    href.startsWith("tel:") ||
+    href.startsWith("mailto:") ||
+    href.startsWith("sms:")
+  );
+}
 
 export function Btn({
   href,
@@ -23,7 +32,7 @@ export function Btn({
   ...rest
 }: BtnProps) {
   const cls = `${base} ${solid ? solidCls : ""} ${className}`.trim();
-  if (external || href.startsWith("http") || href.startsWith("tel:")) {
+  if (external || isPlainAnchor(href)) {
     return (
       <a
         href={href}
