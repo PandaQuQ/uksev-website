@@ -14,6 +14,15 @@ const base =
 const solidCls =
   "border-ink bg-ink text-ground hover:border-amber hover:bg-amber hover:text-ground";
 
+function isPlainAnchor(href: string) {
+  return (
+    href.startsWith("http") ||
+    href.startsWith("tel:") ||
+    href.startsWith("mailto:") ||
+    href.startsWith("sms:")
+  );
+}
+
 export function Btn({
   href,
   solid,
@@ -23,7 +32,7 @@ export function Btn({
   ...rest
 }: BtnProps) {
   const cls = `${base} ${solid ? solidCls : ""} ${className}`.trim();
-  if (external || href.startsWith("http") || href.startsWith("tel:")) {
+  if (external || isPlainAnchor(href)) {
     return (
       <a
         href={href}

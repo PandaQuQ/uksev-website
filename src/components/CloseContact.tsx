@@ -13,9 +13,11 @@ export function CloseContact() {
             Tell us the model. We&apos;ll confirm Abingdon stock and a firm price —{" "}
             {SITE.name}.
           </p>
-          {/* Email CTA omitted — address not confirmed yet */}
         </div>
-        <div className="flex gap-3">
+        <div className="flex flex-wrap gap-3">
+          <Btn href={SITE.emailHref} solid>
+            Email
+          </Btn>
           <Btn href={SITE.phoneHref} solid>
             Call
           </Btn>

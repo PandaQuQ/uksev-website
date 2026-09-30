@@ -1,5 +1,5 @@
 import type { Product } from "@/data/products";
-import { SITE } from "@/lib/site";
+import { SITE, enquireMailto } from "@/lib/site";
 import { Btn } from "./Btn";
 
 export function ProductCard({ product }: { product: Product }) {
@@ -40,7 +40,11 @@ export function ProductCard({ product }: { product: Product }) {
           {p.priceLabel}
         </div>
         <div className="mt-2.5 grid grid-cols-[1.2fr_1fr] gap-2">
-          <Btn href="/#contact" solid className="!px-2 !py-[11px] text-center">
+          <Btn
+            href={enquireMailto(`${p.brand} ${p.name}`)}
+            solid
+            className="!px-2 !py-[11px] text-center"
+          >
             Enquire
           </Btn>
           <Btn href={SITE.whatsapp} external className="!px-2 !py-[11px] text-center">
