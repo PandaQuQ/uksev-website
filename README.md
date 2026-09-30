@@ -1,28 +1,15 @@
-# UKSEV LTD Website
+# UKSEV LTD website
 
-Official website for **UKSEV LTD** — UK in-stock electric bike shop.
+Static lead-gen marketing site for UKSEV LTD (Abingdon warehouse).
 
-## Stack
+- `/` — portal (hero, roster, stock, about, contact)
+- `/shop` — catalogue with search / filter / sort
 
-- Next.js (App Router)
-- TypeScript
-- Tailwind CSS
-
-## Company
-
-- **UKSEV LTD**
-- Steventon Storage Facility, Hanney Rd, Steventon, Abingdon OX13 6DJ
-- +44 7521 63699
-
-## Develop
+CTA: Call / WhatsApp / Enquire. No checkout.
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Scripts
-
-- `npm run dev` — local dev server
-- `npm run build` — production build
-- `npm run lint` — ESLint
+Stack: Next.js App Router, React 19, TypeScript, Tailwind CSS 4.

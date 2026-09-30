@@ -1,0 +1,25 @@
+import { brandRoster } from "@/data/products";
+
+export function RosterList() {
+  return (
+    <section id="brands" className="mx-auto max-w-[980px] px-7 py-20">
+      <div className="reveal mb-7 text-[10.5px] font-semibold tracking-[0.15em] text-teal uppercase">
+        Roster
+      </div>
+      {brandRoster.map((b) => (
+        <div
+          key={b.name}
+          className="reveal grid grid-cols-1 items-baseline gap-2 border-t border-hair py-[22px] last:border-b max-[860px]:gap-2 md:grid-cols-[120px_1fr_auto] md:gap-5"
+        >
+          <span className="text-[10.5px] font-semibold tracking-[0.14em] text-amber uppercase">
+            Brand
+          </span>
+          <span className="font-display text-[clamp(22px,3vw,34px)] font-bold tracking-[-0.03em]">
+            {b.name}
+          </span>
+          <span className="text-[13px] tracking-[0.08em] text-ink-2">{b.blurb}</span>
+        </div>
+      ))}
+    </section>
+  );
+}
