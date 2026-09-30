@@ -1,5 +1,5 @@
 import { featuredDeck } from "@/data/products";
-import { SITE } from "@/lib/site";
+import { SITE, enquireMailto } from "@/lib/site";
 import { Btn } from "./Btn";
 import { ThrowableDeck } from "./ThrowableDeck";
 
@@ -19,8 +19,8 @@ export function ReleasesDeck() {
             — no online bag for now.
           </p>
           <div className="flex flex-wrap gap-3">
-            <Btn href="/shop" solid>
-              Browse all rides
+            <Btn href={enquireMailto()} solid>
+              Enquire
             </Btn>
             <Btn href={SITE.whatsapp} external>
               WhatsApp
